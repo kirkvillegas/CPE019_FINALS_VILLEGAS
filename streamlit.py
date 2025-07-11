@@ -20,7 +20,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-MODEL_PATH = 'Best_Model.h5'  # Change path if your model is elsewhere
+MODEL_PATH = 'My_model.h5'  # Change path if your model is elsewhere
 
 # Efficient model loading with existence check
 @st.cache_resource
