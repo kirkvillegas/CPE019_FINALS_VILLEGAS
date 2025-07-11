@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -19,12 +20,19 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Efficient model loading
+MODEL_PATH = 'Best_Model.h5'  # Change path if your model is elsewhere
+
+# Efficient model loading with existence check
 @st.cache_resource
 def get_model():
-    return tf.keras.models.load_model('Best_Model.h5')
+    if not os.path.exists(MODEL_PATH):
+        st.error(f"Model file '{MODEL_PATH}' not found. Please upload it or place it in the app directory.")
+        return None
+    return tf.keras.models.load_model(MODEL_PATH)
 
 model = get_model()
+if model is None:
+    st.stop()  # Stop execution if model is missing
 
 # App title and instructions
 st.title(" Multi-class Weather Classifier ")
