@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 st.markdown("""
     <style>
     .stApp {
-        background-color: #1ED760;
+        background-color: #33b2ff;
         color: black;
     }
     .stMarkdown, .css-1v0mbdj, .stTextInput, .stFileUploader, .stSelectbox, .stTextArea {
