@@ -56,5 +56,3 @@ else:
 
     st.success(f"🌤 **Classification:** {predicted_class}")
     st.info(f" **Model Confidence:** {confidence:.2f}%")
-
-Don't change the code just change the colors the background make it black
